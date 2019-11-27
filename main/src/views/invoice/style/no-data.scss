@@ -1,0 +1,19 @@
+  .no-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: vw(99);
+    color: #bbb9ba;
+    img {
+      width: 30vw;
+      height: 21.344vw;
+    }
+    span {
+      padding-top: 4vw;
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 3.7333vw;
+      color: #c8c8c8;
+    }
+  }

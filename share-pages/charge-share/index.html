@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-cache" content="disable">
+  <meta http-equiv="Expires" content="0">
+  
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-control" content="no-cache">
+  <meta http-equiv="Cache" content="no-cache">
+  <title>来领一步用车奖励金</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    background: #f9f9f9;
+  }
+
+  body>a{
+    display: none;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1vw;
+  }
+
+  .person {
+    margin-top: 8.533333333333333vw;
+    width: 91.2vw;
+  }
+
+  .upper-part {
+    flex: 1;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-style {
+    width: 94.66666666666667vw;
+    height: 11.733333333333333vw;
+    background: #FACE00;
+    border-radius: 0.5333333333333333vw;
+    line-height: 11.733333333333333vw;
+    text-align: center;
+    font-size: 4.8vw;
+    color: #3d3d3d;
+    margin-top: 11.733333333333333vw;
+  }
+
+  .button-style:active {
+    background: #e6c11e;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 8.533333333333333vw;
+    color: #4a4a4a;
+    white-space: nowrap;
+  }
+
+  h1:first-of-type {
+    margin-top: 10.666666666666666vw;
+  }
+
+  .charge-guide {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .explain {
+    align-self: flex-start;
+    margin: 2.6666666666666665vw 0;
+    padding-left: 1vw;
+    font-size: 3.466666666666667vw;
+    color: #7f7f7f;
+  }
+
+  .usage {
+    width: 93.86666666666666vw;
+
+  }
+
+
+
+  .img-border {
+    width: 20vw;
+  }
+
+  .arrow {
+    width: 2.4vw;
+  }
+
+  .usage-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .img-border {
+    border: #efefef solid 1px;
+    border-radius: 0.5333333333333333vw;
+  }
+
+  .usage-tip {
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .usage-tip span {
+    width: 20vw;
+    white-space: nowrap;
+    font-size: 3.2vw;
+    color: #7f7f7f;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <div class="upper-part">
+      <h1>还车后帮充电</h1>
+      <h1>赠送最高6元奖励金</h1>
+      <img src="./img/person.png" class="person">
+      <span class="button-style" onclick="jumpApp()">立即体验一步用车</span>
+    </div>
+    <div class="charge-guide">
+      <span class="explain">活动玩法:</span>
+      <div class="usage">
+        <div class="usage-img">
+          <img src="./img/park.png" class="img-border">
+          <img src="./img/arrow.png" class="arrow">
+          <img src="./img/one.png" class="img-border">
+          <img src="./img/arrow.png" class="arrow">
+          <img src="./img/two.png" class="img-border">
+          <img src="./img/arrow.png" class="arrow">
+          <img src="./img/three.png" class="img-border">
+        </div>
+        <div class="usage-tip">
+          <span>用车完成</span>
+          <span>车辆插枪</span>
+          <span>扫码充电</span>
+          <span>领取奖励金</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.body.addEventListener('touchstart', function () { }, false)
+    function jumpApp() {
+      window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.usercar.yongche'
+    }
+  </script>
+  <script>
+    var ua = window.navigator.userAgent.toLowerCase();
+    window.platform = {
+      isiPhone: ua.match(/iphone/i) !== null,
+      isAndroid: ua.match(/android/i) !== null
+    }
+    if (window.platform.isiPhone) {
+      document.body.className = 'iphone'
+    } else if (window.platform.isAndroid) {
+      document.body.className = 'android'
+    }
+  </script>
+  <script src="https://s13.cnzz.com/z_stat.php?id=1268135214&web_id=1268135214" language="JavaScript"></script>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script>
+    function wxjssdk() {
+      window.wxShareData = {
+        // 分享标题，根据情况修改
+        title: '来领一步用车奖励金',
+        // 分享描述，根据情况修改
+        desc: '还车后帮充电，即刻领取奖励金',
+        // 分享链接，必须与当前页面对应的公众号JS安全域名一致
+        link: location.href,
+        // 分享缩略图参考尺寸300*300，根据情况修改
+        imgUrl: 'http://h5.1byongche.com/static/img/logo.png'
+      };
+
+
+      function configWeixin() {
+        var xmlhttp
+        if (window.XMLHttpRequest) {
+          xmlhttp = new XMLHttpRequest()
+        } else {
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == 4) {
+            if (xmlhttp.status == 200) {
+              var data = JSON.parse(xmlhttp.responseText);
+              wx.config({
+                // 可以开启debug模式，页面会alert出错误信息
+                debug: false,
+                appId: data.appId,
+                timestamp: data.timestamp,
+                nonceStr: data.noncestr,
+                signature: data.signature,
+                // 配置所需的API列表
+                jsApiList: ['checkJsApi',
+                  'onMenuShareTimeline',
+                  'onMenuShareAppMessage'
+                ]
+              });
+            } else {
+              callback(null)
+            }
+          }
+        }
+        xmlhttp.open("GET", "https://h5.1byongche.com/service/weixin/sign?url=" + encodeURIComponent(location.href.split('#')[0]), true)
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8")
+        xmlhttp.send()
+      }
+
+      configWeixin()
+
+      wx.ready(function () {
+        // 分享到朋友圈
+        wx.onMenuShareTimeline({
+          title: wxShareData.title,
+          desc: wxShareData.desc,
+          link: wxShareData.link,
+          imgUrl: wxShareData.imgUrl,
+          trigger: function (res) {
+            // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+          },
+          success: function () {
+            // 用户确认分享后执行的回调函数
+          },
+          cancel: function () {
+            // 用户取消分享后执行的回调函数
+          }
+        });
+        // 分享给朋友
+        wx.onMenuShareAppMessage({
+          title: wxShareData.title,
+          desc: wxShareData.desc,
+          link: wxShareData.link,
+          imgUrl: wxShareData.imgUrl,
+          success: function () {
+            // 用户确认分享后执行的回调函数
+          },
+          cancel: function () {
+            // 用户取消分享后执行的回调函数
+          }
+        });
+      });
+    }
+
+    wxjssdk();
+
+  </script>
+</body>
+
+</html>

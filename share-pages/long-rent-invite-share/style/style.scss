@@ -1,0 +1,238 @@
+@import './common';
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/bg.png');
+  background-size: 100% auto;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: #e25d4e;
+  .main-content {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    .bg {
+      width: 100%;
+      position: relative;
+      font-size: 0;
+      img {
+        width: 100%;
+      }
+      img:last-of-type {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+    }
+    &.success{
+      .form-container{
+        display: none;
+      }
+      .result-container{
+        display: block;
+      }
+      .bg{
+        img.open{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.form-container {
+  position: absolute;
+  width: 100%;
+  top: 43%;
+  text-align: center;
+  color: #efefef;
+  padding: 0 7.3vw;
+  .tel {
+    font-size: px2vw(20);
+    margin: 0;
+  }
+  .copy {
+    font-size: px2vw(20);
+    margin: 0;
+  }
+  input {
+    display: block;
+    margin: 5vw 0 0;
+    padding: 0 4vw;
+    border: none;
+    width: 100%;
+    height: px2vw(47);
+    line-height: px2vw(47);
+    color: #3d3d3d;
+    background-color: #fff;
+    border-radius: 5.8666666vw;
+    text-align: center;
+    font-size: 4.6vw;
+    outline: none;
+  }
+  button {
+    display: block;
+    border: 0;
+    -webkit-appearance: none;
+    outline: none;
+    margin: 5vw 0 0;
+    width: 100%;
+    border-radius: 5.8666666vw;
+    line-height: px2vw(47);
+    background: #F5A623;
+    font-size: px2vw(18);
+    color: #FFFFFF;
+  }
+  .rule-link {
+    font-size: px2vw(12);
+    color: #FFFFFF;
+    display: inline-block;
+    margin-top: 1vw;
+    padding: 2vw;
+  }
+}
+
+.result-container {
+  position: absolute;
+  top: 7%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 0 7.3vw;
+  display: none;
+  h2,
+  p {
+    margin: 0;
+  }
+  .coupon {
+    font-size: px2vw(12);
+    color: #F5A623;
+    p:last-of-type {
+      font-size: px2vw(14);
+      margin-top: 2vw;
+    }
+    strong {
+      font-size: px2vw(36);
+    }
+  }
+  h2 {
+    font-size: px2vw(36);
+    margin-top: 10vw;
+    font-weight: normal;
+  }
+  .copy1 {
+    font-size: px2vw(16);
+    margin-top: 1vw;
+  }
+  button {
+    display: block;
+    width: 100%;
+    border-radius: px2vw(100);
+    font-size: px2vw(18);
+    height: px2vw(47);
+    line-height: px2vw(47);
+    color: #fff;
+  }
+  button:first-of-type {
+    background: #F5A623;
+    margin-top: 6vw;
+  }
+  button:last-of-type {
+    background: #E25E4F;
+    border: 1px solid #F5A623;
+    margin-top: 4vw;
+  }
+  .copy2 {
+    font-size: px2vw(12);
+    margin-top: 4vw;
+    a{
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}
+
+.rule-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.hidden {
+    display: none;
+  }
+  .content {
+    width: 75%;
+    background-color: rgba(252, 252, 252, 0.9);
+    border-radius: 5vw;
+    .title {
+      font-size: px2vw(15);
+      text-align: center;
+      position: relative;
+      padding: 3vw 0;
+      border-bottom: 1px solid rgba(191, 190, 190, 0.78);
+      .close-popup {
+        width: 8vw;
+        height: 8vw;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 3vw;
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 5vw;
+          height: 0.3vw;
+          background-color: #3d3d3d;
+          top: 4vw;
+          left: 1.5vw;
+        }
+        &::before {
+          transform: rotate(45deg);
+        }
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    ul {
+      font-size: px2vw(14);
+      list-style: none;
+      margin: 0;
+      padding: 5vw 3vw;
+      text-align: left;
+    }
+  }
+}
+
+.share-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  img {
+    position: absolute;
+    width: 63%;
+    right: 0;
+    top: 0;
+  }
+  p {
+    position: absolute;
+    top: 102vw;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+  }
+}

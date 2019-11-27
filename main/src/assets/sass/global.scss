@@ -1,0 +1,28 @@
+$color-bg: #fdfdfe; // 背景色
+$color-dark: #3d3d3d;
+$color-yellow: #fdd000;
+$color-active-yellow: #e6c11e;
+$color-white: #fff;
+$color-gray: #999;
+$color-gray-light: #a1a1a1;
+$color-gray-white: #d5d5d5;
+$color-money-gray: #d8d8d8;
+$color-text: #3d3d3d;
+$color-blue: #769cde;
+$color-placeholder: #d6d6d6;
+$color-gray-border: #e7e7e7;
+$color-bg-light: #f9f9f9;
+
+$color-popup-blue: #0076ff;
+$color-popup-gray: #979797;
+
+$color-button-gray: #979797;
+$color-button-white: #f7f7f7;
+$color-company-green: #5094f3;
+
+@function px2vw($px) {
+  @return $px / (375/100) + vw;
+}
+@function vw($px) {
+  @return px2vw($px);
+}

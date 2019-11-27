@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="x5-cache" content="disable">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-control" content="no-cache">
+  <meta http-equiv="Cache" content="no-cache">
+  <title>共享用车 一步就好</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+  var ua = window.navigator.userAgent.toLowerCase();
+  window.platform = {
+    isiPhone: ua.match(/iphone/i) !== null,
+    isAndroid: ua.match(/android/i) !== null
+  }
+  if(window.platform.isiPhone){
+    document.body.className = 'iphone'
+  }else if(window.platform.isAndroid){
+    document.body.className = 'android'
+  }
+  </script>
+  <script src="./dist/build.js"></script>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script>
+  function wxjssdk() {
+    window.wxShareData = {
+      // 分享标题，根据情况修改
+      title: '您的好友送您66元优惠券，首次用车低至0元',
+      // 分享描述，根据情况修改
+      desc: '来不及解释了，请你开车就是这么任性，快来注册领券吧',
+      // 分享链接，必须与当前页面对应的公众号JS安全域名一致
+      link: location.href,
+      // 分享缩略图参考尺寸300*300，根据情况修改
+      imgUrl: 'http://h5.1byongche.com/static/img/logo.png'
+    };
+
+
+    function configWeixin() {
+      var xmlhttp
+      if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest()
+      } else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4) {
+          if (xmlhttp.status == 200) {
+            var data = JSON.parse(xmlhttp.responseText);
+            wx.config({
+              // 可以开启debug模式，页面会alert出错误信息
+              debug: false,
+              appId: data.appId,
+              timestamp: data.timestamp,
+              nonceStr: data.noncestr,
+              signature: data.signature,
+              // 配置所需的API列表
+              jsApiList: ['checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage'
+              ]
+            });
+          } else {
+            callback(null)
+          }
+        }
+      }
+      xmlhttp.open("GET", "https://h5.1byongche.com/api/weixin/sign?url=" + encodeURIComponent(location.href.split('#')[0]), true)
+      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8")
+      xmlhttp.send()
+    }
+
+    configWeixin()
+
+    wx.ready(function() {
+      // 分享到朋友圈
+      wx.onMenuShareTimeline({
+        title: wxShareData.title,
+        desc: wxShareData.desc,
+        link: wxShareData.link,
+        imgUrl: wxShareData.imgUrl,
+        trigger: function(res) {
+          // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+        },
+        success: function() {
+          // 用户确认分享后执行的回调函数
+        },
+        cancel: function() {
+          // 用户取消分享后执行的回调函数
+        }
+      });
+      // 分享给朋友
+      wx.onMenuShareAppMessage({
+        title: wxShareData.title,
+        desc: wxShareData.desc,
+        link: wxShareData.link,
+        imgUrl: wxShareData.imgUrl,
+        success: function() {
+          // 用户确认分享后执行的回调函数
+        },
+        cancel: function() {
+          // 用户取消分享后执行的回调函数
+        }
+      });
+    });
+  }
+
+  wxjssdk();
+
+  </script>
+</body>
+
+</html>

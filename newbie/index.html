@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新手上路</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+      <div class="text-container">
+        <div class="step-text step0">
+          <h2>第一步：注册登录</h2>
+          <p>手机号+验证码一步完成登录/注册</p>
+        </div>
+        <div class="step-text step1 active">
+          <h2>第一步：注册登录</h2>
+          <p>手机号+验证码一步完成登录/注册</p>
+        </div>
+        <div class="step-text step2">
+          <h2>第二步：实名认证</h2>
+          <p>上传身份证、驾驶证正副本完成认证</p>
+        </div>
+        <div class="step-text step3">
+          <h2>第三步：交纳保证金</h2>
+          <p>交纳保证金后即可使用车辆</p>
+        </div>
+        <div class="step-text step4">
+          <h2>第四步：预定车辆</h2>
+          <p>查找附近网点，选择车辆并确认预定</p>
+        </div>
+        <div class="step-text step5">
+          <h2>第五步：寻车并取车</h2>
+          <p>前往预定网点取车，并检查车辆状况</p>
+        </div>
+        <div class="step-text step6">
+          <h2>第六步：用车及还车</h2>
+          <p>车辆需还至网点，锁好车辆，并带走个人物品</p>
+        </div>
+      </div>
+      <div class="slide-container">
+        <div class="iphone">
+          <img src="img/iphone.png" alt="">
+        </div>
+        <div class="gallery">
+          <div class="swiper-wrapper">
+            <div class="step step1 swiper-slide">
+              <img src="./img/s1.jpg" alt="">
+            </div>
+            <div class="step step2 swiper-slide">
+              <img src="./img/s2.jpg" alt="">
+            </div>
+            <div class="step step3 swiper-slide">
+              <img src="./img/s3.jpg" alt="">
+            </div>
+            <div class="step step4 swiper-slide">
+              <img src="./img/s4.jpg" alt="">
+            </div>
+            <div class="step step5 swiper-slide">
+              <img src="./img/s5.jpg" alt="">
+            </div>
+            <div class="step step6 swiper-slide">
+              <img src="./img/s6.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <script src="js/zepto.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script>
+  $(document).ready(function() {
+
+    if (window.innerWidth / window.innerHeight > 0.6465) {
+      $('body').addClass('small')
+    }
+
+    var $textContainer = $('.text-container')
+
+    function showText(index) {
+      $textContainer.find('.active').removeClass('active')
+      $textContainer.find('.step-text').eq(index + 1).addClass('active')
+    }
+
+
+    var mySwiper = new Swiper('.gallery', {
+      // Optional parameters
+      // direction: 'vertical',
+      loop: false,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      on: {
+        init: function() {
+          setTimeout(function() {
+            showText(mySwiper.activeIndex)
+          }, 10);
+        },
+        slideChange: function() {
+          showText(mySwiper.activeIndex)
+        }
+      }
+    })
+  })
+  </script>
+</body>
+
+</html>

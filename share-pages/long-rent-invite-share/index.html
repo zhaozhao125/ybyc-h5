@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>共享用车，一步就好</title>
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="main-content">
+      <div class="bg">
+        <img src="./img/close.png" alt="">
+        <img class="open" src="./img/open.png" alt="">
+      </div>
+      <div class="form-container">
+        <p class="tel">-</p>
+        <p class="copy">送你300元租车体验券</p>
+        <input class="tel-input" type="tel" placeholder="输入手机号，领取体验券">
+        <button class="submit-btn">立刻领取</button>
+        <a href="#" class="rule-link">领取规则</a>
+      </div>
+      <div class="result-container">
+        <div class="coupon">
+          <p>短/长租优惠券</p>
+          <p>
+            <strong>300</strong>元</p>
+        </div>
+        <h2>恭喜你</h2>
+        <p class="copy1">优惠券已到<span class="success-tel"></span>账户中</p>
+        <button class="app-btn">打开/下载app</button>
+        <button class="share-btn">我也要赚佣金</button>
+        <p class="copy2">短长租用车如需帮助可拨打客服电话：
+          <a href="tel:4001111818">4001111818</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="rule-popup hidden">
+    <div class="content">
+      <div class="title">
+        <span>领取规则</span>
+        <span class="close-popup"></span>
+      </div>
+      <ul>
+        <li>1.新老用户输入手机号即可领取1张300短长租优惠券；</li>
+        <li>2.该订单租车费用满1800元可使用该优惠券</li>
+        <li>3.该优惠券仅限郑州地区使用</li>
+        <li>4.券有效期为15天</li>
+        <li>5.同一好友发的优惠券15天内只能领取1次</li>
+      </ul>
+    </div>
+  </div>
+  <div class="share-overlay">
+    <img src="./img/share.png" alt="">
+    <p>送好友1张300元短/长租优惠券</p>
+  </div>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <!-- <script src="./script/core.js"></script> -->
+  <!-- <script src="./script/md5.js"></script> -->
+  <script src="./script/index.js"></script>
+  <script>
+      function wxjssdk() {
+        window.wxShareData = {
+          // 分享标题，根据情况修改
+          title: '好友送你1张300元短/长租优惠券，海马月租仅需1500元！',
+          // 分享描述，根据情况修改
+          desc: '领到即赚到，推荐好友用车每单可得100元佣金。',
+          // 分享链接，必须与当前页面对应的公众号JS安全域名一致
+          link: location.href,
+          // 分享缩略图参考尺寸300*300，根据情况修改
+          imgUrl: 'https://h5.1byongche.com/static/img/logo.png'
+        };
+  
+        function configWeixin() {
+          var xmlhttp
+          if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest()
+          } else {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP")
+          }
+          xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4) {
+              if (xmlhttp.status == 200) {
+                var data = JSON.parse(xmlhttp.responseText);
+                wx.config({
+                  // 可以开启debug模式，页面会alert出错误信息
+                  debug: false,
+                  appId: data.appId,
+                  timestamp: data.timestamp,
+                  nonceStr: data.noncestr,
+                  signature: data.signature,
+                  // 配置所需的API列表
+                  jsApiList: ['checkJsApi',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage'
+                  ]
+                });
+              } else {
+                callback(null)
+              }
+            }
+          }
+          xmlhttp.open("GET", "https://h5.1byongche.com/api/weixin/sign?url=" + encodeURIComponent(location.href.split(
+            '#')[0]), true)
+          xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8")
+          xmlhttp.send()
+        }
+  
+        configWeixin()
+  
+        wx.ready(function () {
+          // 分享到朋友圈
+          wx.onMenuShareTimeline({
+            title: wxShareData.title,
+            desc: wxShareData.desc,
+            link: wxShareData.link,
+            imgUrl: wxShareData.imgUrl,
+            trigger: function (res) {
+              // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+            },
+            success: function () {
+              // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+              // 用户取消分享后执行的回调函数
+            }
+          });
+          // 分享给朋友
+          wx.onMenuShareAppMessage({
+            title: wxShareData.title,
+            desc: wxShareData.desc,
+            link: wxShareData.link,
+            imgUrl: wxShareData.imgUrl,
+            success: function () {
+              // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+              // 用户取消分享后执行的回调函数
+            }
+          });
+        });
+      }
+  
+      wxjssdk();
+    </script>
+  <script>
+    (function () {
+      window.initPage({
+        shareTitle: '好友送你1张300元短/长租优惠券，海马月租仅需1500元！',
+        shareDesc: '领到即赚到，推荐好友用车每单可得100元佣金。',
+        env: 'test',
+        sa: true
+      })
+      if(!window.sa){
+        window.sa = {track: function(){}}
+      }
+      window.sa.track('h5ShortRentInviteDistPageOpen')
+      // bind rule event
+      var $popup = $('.rule-popup')
+      $popup.querySelector('.close-popup').addEventListener('click', function () {
+        $popup.classList.add('hidden')
+      }, false)
+
+      $('.rule-link').addEventListener('click', function (e) {
+        e.preventDefault()
+        $popup.classList.remove('hidden')
+      }, false)
+
+      $popup.addEventListener('click', function (e) {
+        if (e.target.classList.contains('rule-popup')) {
+          $popup.classList.add('hidden')
+        }
+      }, false)
+
+      // bind form event
+      var URL = window.env == 'production' ?
+        'https://api.1byongche.com:7101/php-service/activity/simple/short-rent-activity/shortrent-register' :
+        'https://pre.1byongche.cn:7101/php-service/activity/simple/short-rent-activity/shortrent-register'
+      var $telInput = $('.tel-input')
+      var query = getQuery()
+      $('.form-container .tel').innerText = query.phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
+      $('.submit-btn').addEventListener('click', function () {
+        var tel = $telInput.value
+        if (window.checkTel(tel)) {
+          var data = {
+            uid: query.uid,
+            initiatorphone: query.phone,
+            newphone: tel,
+          }
+          // data.sign = getSign(data)
+          ajax(URL, {
+            method: 'post',
+            loading: true,
+            data: data,
+            success: function (res) {
+              console.log('====res====', res)
+              if (res.code != 0) {
+                showToast(res.msg || 'error')
+              } else {
+                window.sa.login(res.data.userid)
+                $('.success-tel').innerText = tel.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
+                $('.main-content').classList.add('success')
+                var queryStr = ['uid=' + res.data.userid, 'phone=' + tel, 'version=' + query.version,
+                  'source=share'
+                ].join('&')
+                window.wxShareData.link = location.href.split('?')[0] + '?' + queryStr
+                // 分享到朋友圈
+                wx.onMenuShareTimeline({
+                  title: window.wxShareData.title,
+                  desc: window.wxShareData.desc,
+                  link: window.wxShareData.link,
+                  imgUrl: window.wxShareData.imgUrl,
+                  trigger: function () {
+                    // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+                  },
+                  success: function () {
+                    // 用户确认分享后执行的回调函数
+                  },
+                  cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                  }
+                });
+                // 分享给朋友
+                wx.onMenuShareAppMessage({
+                  title: window.wxShareData.title,
+                  desc: window.wxShareData.desc,
+                  link: window.wxShareData.link,
+                  imgUrl: window.wxShareData.imgUrl,
+                  success: function () {
+                    // 用户确认分享后执行的回调函数
+                  },
+                  cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                  }
+                });
+              }
+            },
+            error: function (res) {
+              console.log('====res====', res)
+              showToast('请求出错，请检查网络')
+            }
+          })
+        } else {
+          showToast('请输入正确的手机号')
+        }
+      }, false)
+
+      // bind share event
+      var $share = $('.share-overlay')
+      $share.addEventListener('click', function () {
+        $share.style.display = 'none'
+      }, false)
+
+      $('.share-btn').addEventListener('click', function () {
+        $share.style.display = 'block'
+      }, false)
+
+      $('.app-btn').addEventListener('click', function () {
+        setTimeout(function () {
+          location.href = 'https://a.app.qq.com/o/simple.jsp?pkgname=com.usercar.yongche'
+        }, 100);
+      }, false)
+    })()
+  </script>
+
+</body>
+
+</html>

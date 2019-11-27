@@ -1,0 +1,141 @@
+@import './swiper';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #F8CF00;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("../img/bg.png");
+  background-size: contain;
+  background-position: right;
+  background-repeat-x: no-repeat;
+  background-repeat-y: repeat;
+  display: flex;
+  align-items: center;
+  .content {
+    margin: auto;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.text-container {
+  overflow: hidden;
+  position: relative;
+  .step-text {
+    position: absolute;
+    padding-left: 6vw;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+    h2 {
+      font-size: 5.8666vw;
+      font-weight: normal;
+      margin: 6vw 0 2vw;
+    }
+    p {
+      font-size: 3.7333vw;
+      margin: 2vw 0 6vw;
+    }
+  }
+  .step0 {
+    position: static;
+    opacity: 0;
+  }
+}
+
+.slide-container {
+  margin-top: 2vw;
+  position: relative;
+  .gallery {
+    position: absolute;
+    width: 56.5%;
+    height: 86%;
+    bottom: 1.2vw;
+    left: 0.5vw;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  .swiper-pagination {
+    margin-top: 1vw;
+    position: static;
+    .swiper-pagination-bullet {
+      width: 2.4vw;
+      height: 2.4vw;
+      display: inline-block;
+      margin: 0 1vw;
+      border-radius: 100%;
+      background: #fff;
+      opacity: 0.45;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      background-color: #fff;
+    }
+  }
+  .swiper-button-next {
+    background-image: url('../img/arrow.svg');
+    width: 10.2vw;
+    height: 10.2vw;
+    right: 4vw;
+    background-size: contain;
+    background-position: center;
+    background-clip: content-box;
+    padding: 2vw;
+    background-origin: content-box;
+  }
+  .swiper-button-prev {
+    background-image: url('../img/arrow.svg');
+    transform: rotate(180deg);
+    width: 10.2vw;
+    height: 10.2vw;
+    left: 4vw;
+    background-size: contain;
+    background-position: center;
+    background-clip: content-box;
+    padding: 2vw;
+    background-origin: content-box;
+  }
+  .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+    opacity: 0;
+    cursor: auto;
+    pointer-events: none;
+  }
+}
+
+body.small {
+  .text-container .step-text {
+    h2 {
+      margin: 2vw 0 0vw;
+    }
+    p {
+      margin: 0vw 0 1vw;
+    }
+  }
+  .wrapper .swiper-pagination{
+    margin-top: 0;
+  }
+}

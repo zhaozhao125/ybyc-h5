@@ -1,0 +1,51 @@
+@import './common';
+
+body {
+  background-color: #FFBF00;
+  background-image: url('../img/pic.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+#points {
+  margin-top: 48vw;
+  text-align: center;
+
+  span {
+    font-size: px2vw(50);
+    color: #FFF3BC;
+  }
+
+  img {
+    width: px2vw(24);
+  }
+}
+
+.button {
+  width: 91%;
+  margin-top: 72vw;
+}
+
+.qrcode {
+  width: 34%;
+  margin-top: 4vw;
+}
+
+.copy {
+  font-size: px2vw(14);
+  color: #3D3C3C;
+  text-align: center;
+  margin-top: 2vw;
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    width: px2vw(6);
+    height: px2vw(6);
+    vertical-align: middle;
+    background-color: #000000;
+    margin: 0 2vw;
+  }
+}

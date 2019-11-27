@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>停车费说明</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<!-- 百步亭停车费说明 -->
+
+<body>
+  <main class="wrapper">
+    <section>
+      <h3>网点分类</h3>
+      <ul class="icon-ul">
+        <li>
+          <img src="./img/marker1.png" alt="">
+          <p>此标志为一步用车合作网点，用户<strong>无需额外支付费用</strong>。</p>
+        </li>
+        <li>
+          <img src="./img/marker2.png" alt="">
+          <p>此标志为一步用车非自营网点，是方便用户取车、还车、用车的全新模式，在所有
+            <img src="./img/icon.png" alt="">网点均可随取随还。用户在此取还车会<strong>产生相关费用</strong>。</p>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>取车规则</h3>
+      <ul>
+        <li>
+          <p>
+            1.
+            <strong>【百步亭】</strong>网点为非自营网点；在这类网点取车时，需自行向停车场支付该车辆的停车费，此订单支付完成后，系统会对用户进行
+            <strong>红包补偿</strong>；</strong>。
+          </p>
+        </li>
+        <li>
+          <p>2.
+            <strong>需交停车费</strong> 根据该车辆的停车时长，估算的停车费，最终停车费以出停车场时的实际收费为准；</p>
+        </li>
+        <li>
+          <p>3. 如停车场实际收取与估算偏差过大，请
+            <strong>索要并保留停车费发票</strong>，与客服进行联系；</p>
+        </li>
+        <li>
+          <p>
+            4. 红包补偿将在用户支付完成该笔订单后，自动发放到我的钱包-红包中，红包可提现或转至余额。
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>还车规则</h3>
+      <ul>
+        <li>
+          <p>1. 用户在【百步亭】网点还车，需支付还车服务费，该费用在订单结算时一并支付；</p>
+        </li>
+        <li>
+          <p>2. 还车服务费金额，各还车网点不同；</p>
+        </li>
+        <li>
+          <p>3. 注意：还车时，无需向停车场人员缴纳停车费。</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <img src="" id="img" alt="">
+  <script src="./node_modules/html2canvas/dist/html2canvas.js"></script>
+  <script>
+    html2canvas(document.body).then(function(canvas) {
+      document.body.appendChild(canvas);
+      console.log(canvas.toDataURL("image/jpeg", 1))
+      document.querySelector('#img').src=canvas.toDataURL("image/jpeg", 0.5)
+  });
+  </script>
+</body>
+
+</html>

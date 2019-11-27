@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>来领50元优惠券</title>
+  <style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .three-orders {}
+
+  .top-banner {
+    width: 100%;
+  }
+
+  .order-line {
+    width: 90%;
+    margin: 5vw auto 8vw;
+  }
+
+  .line-container,
+  .weeks {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .car {}
+
+  .car img {
+    width: 17.6vw;
+    position: relative;
+    left: 43%;
+  }
+
+  .line-container {
+    position: relative;
+  }
+
+  .red-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #ff8f1b;
+  }
+
+  .circle {
+    width: 2.6667vw;
+    height: 2.6667vw;
+    border-radius: 50%;
+    background-image: -webkit-linear-gradient(top, #e0e0e0 0%, #cccccc 100%);
+    background-image: linear-gradient(-180deg, #e0e0e0 0%, #cccccc 100%);
+    position: relative;
+    z-index: 9;
+  }
+
+  .circle.active {
+    width: 4.8vw;
+    height: 4.8vw;
+    background-image: -webkit-linear-gradient(top, #ffea00 0%, #fdd000 100%);
+    background-image: linear-gradient(-180deg, #ffea00 0%, #fdd000 100%);
+    border: 1px solid #ffffff;
+  }
+
+  .weeks {
+    margin-top: 3vw;
+  }
+
+  .weeks p {
+    font-size: 3.7333vw;
+    color: #3d3d3d;
+  }
+
+  .yellow-btn {
+    display: block;
+    text-decoration: none;
+    background-image: -webkit-linear-gradient(top, #fdd000 0%, #ebc100 100%);
+    background-image: linear-gradient(-180deg, #fdd000 0%, #ebc100 100%);
+    border-radius: 26.6667vw;
+    line-height: 13.3333vw;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1vw solid #ece0ba;
+    box-shadow: 0 0.5333vw 1.0667vw 0 rgba(138, 104, 51, 0.5);
+    font-size: 4.8vw;
+    color: #ffffff;
+  }
+
+  .rule {
+    color: #3d3d3d;
+    line-height: 5.8667vw;
+    width: 95%;
+    margin: 5vw auto;
+  }
+
+  .rule h3 {
+    font-size: 4.2667vw;
+    font-weight: normal;
+  }
+
+  .rule ul {
+    padding-left: 8vw;
+    font-size: 3.2vw;
+    list-style: decimal;
+  }
+
+  .share-btn {
+    text-decoration: underline;
+    font-size: 16px;
+    color: #3d3d3d;
+    display: block;
+    text-align: center;
+    line-height: 14vw;
+  }
+
+  .title-with-line {
+    font-size: 3.7333vw;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0 3vw;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .title-with-line span {
+    display: inline-block;
+    padding: 0 3vw;
+  }
+
+  .title-with-line:after,
+  .title-with-line:before {
+    content: '';
+    height: 1px;
+    background-color: #d5d5d5;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="three-orders">
+    <img src="./img/banner.png" alt="" class="top-banner">
+    <div class="order-line">
+      <div class="car">
+        <img src="./img/car.png" alt="">
+      </div>
+      <div class="line-container">
+        <div class="circle active"></div>
+        <div class="circle"></div>
+        <div class="circle active"></div>
+        <div class="circle active"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="red-line"></div>
+      </div>
+      <div class="weeks">
+        <p>周一</p>
+        <p>周二</p>
+        <p>周三</p>
+        <p>周四</p>
+        <p>周五</p>
+        <p>周六</p>
+        <p>周日</p>
+      </div>
+    </div>
+    <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.usercar.yongche" class="yellow-btn" target="_blank">
+      快去用车，领取50元优惠券吧
+    </a>
+    <div class="rule">
+      <h3 class="title-with-line">
+        <span>活动规则</span>
+      </h3>
+      <ul>
+        <li>每单需有效行驶20分钟以上；</li>
+        <li>若出现跨周，以订单支付时间所在周为准；</li>
+        <li>若一天内多次用车，仅计作1单；</li>
+        <li>满足活动条件后，需在活动页面手动点击领取优惠券，每周一清空上周用车次数；</li>
+        <li>活动入口：订单支付完成后的活动页面，以及App首页顶部广告条等；</li>
+        <li>活动日期 6.19-8.31。</li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

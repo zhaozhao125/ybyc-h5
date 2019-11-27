@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>限行政策</title>
+  <style>
+    body {
+      margin: 10px;
+    }
+
+    h1 {
+      font-size: 18px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 18px 0;
+      padding: 0;
+      max-width: 480px;
+    }
+
+    li {
+      background: #FDD000;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .container {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 10px 24px 10px 0;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .day {
+      background-color: #fff;
+      border-top-right-radius: 36px;
+      border-bottom-right-radius: 36px;
+      padding: 0 12px 0 20px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .day span:first-of-type {
+      font-size: 24px;
+      display: inline-block;
+      margin-right: 64px;
+    }
+
+    .day span:last-of-type {
+      font-size: 16px;
+    }
+
+    .numbers {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .number {
+      display: inline-block;
+      background: #3D3D3D;
+      border-radius: 4px;
+      color: #FDD000;
+      font-size: 48px;
+      width: 45px;
+      line-height: 45px;
+      text-align: center;
+    }
+
+    .plus {
+      font-size: 24px;
+      color: #3D3D3D;
+      margin: 0 10px;
+    }
+
+    @media screen and (max-width: 340px) {
+      .day span:first-of-type {
+        margin-right: 32px;
+      }
+
+      .container {
+        padding: 10px 18px 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>郑州市限行政策</h1>
+  <p>1. 2018年1月1日开始，工作日的7~21时，执行尾号限行政策（车牌号取最后一位数字进行限行）;</p>
+  <p>2.限行区域：三环范围内（三环道路不属于限行区域）;</p>
+  <p>3.若限号车进入限行区域内，将按违章处理;</p>
+  <p>4.悬挂新能源汽车专用号牌（绿牌）的新能源汽车，不在限行范围内。</p>
+  <ul>
+    <li>
+      <div class="container">
+        <div class="day">
+          <span>周一</span>
+          <span>限</span>
+        </div>
+        <div class="numbers">
+          <span class="number">1</span>
+          <span class="plus">+</span>
+          <span class="number">6</span>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="container">
+        <div class="day">
+          <span>周二</span>
+          <span>限</span>
+        </div>
+        <div class="numbers">
+          <span class="number">2</span>
+          <span class="plus">+</span>
+          <span class="number">7</span>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="container">
+        <div class="day">
+          <span>周三</span>
+          <span>限</span>
+        </div>
+        <div class="numbers">
+          <span class="number">3</span>
+          <span class="plus">+</span>
+          <span class="number">8</span>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="container">
+        <div class="day">
+          <span>周四</span>
+          <span>限</span>
+        </div>
+        <div class="numbers">
+          <span class="number">4</span>
+          <span class="plus">+</span>
+          <span class="number">9</span>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="container">
+        <div class="day">
+          <span>周五</span>
+          <span>限</span>
+        </div>
+        <div class="numbers">
+          <span class="number">5</span>
+          <span class="plus">+</span>
+          <span class="number">0</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</body>
+
+</html>

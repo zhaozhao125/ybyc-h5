@@ -1,0 +1,85 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.account-detail {
+  width: 100%;
+  height: 100%;
+  .bill-block {
+    display: flex;
+    width: 94.666667%;
+    height: 20.53vw;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #e7e7e7;
+    .bill-left {
+      padding-top: 4.78vw;
+      .car-type {
+        font-family: 'PingFang';
+        padding-top: 4.78vw;
+        font-size: 4.8vw;
+        color: #3d3d3d; // font-weight: 600;
+      }
+      div {
+        .time {
+          font-size: 3.7333vw;
+          color: #999999;
+        }
+      }
+    }
+    .money {
+      font-size: 4.8vw;
+      align-self: center;
+      font-weight: 600;
+    }
+    .bill-right-yellow {
+      color: #fdd000 !important;
+    }
+    .bill-right-black {
+      color: #3d3d3d !important;
+    }
+  }
+} // 暂无数据
+.no-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20vw;
+  color: #787878;
+  img {
+    width: 23vw;
+    height: 29.6vw;
+  }
+  span {
+    padding-top: 4vw;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 3.7333vw;
+  }
+}
+
+.no-coupon {
+  margin: 0 auto;
+  margin-top: 2.668vw;
+  font-size: 3.7333vw;
+  color: #d6d6d6;
+  width: 100%;
+  text-align: center;
+}
+
+.loading {
+  display: flex;
+  margin-top: 3vw;
+  color: #ccc;
+  justify-content: center;
+  align-items: center;
+  span {
+    margin-left: 3vw;
+    font-size: 4.5vw;
+  }
+}

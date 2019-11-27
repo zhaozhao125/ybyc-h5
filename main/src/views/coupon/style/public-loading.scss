@@ -1,0 +1,11 @@
+
+.loading {
+  display: flex;
+  color: #ccc;
+  justify-content: center;
+  align-items: center;
+  span {
+    margin-left: 3vw;
+    font-size: 4.5vw;
+  }
+}

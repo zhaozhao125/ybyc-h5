@@ -1,0 +1,63 @@
+@import '../global';
+
+// #fdd000
+.bg-yellow{
+  background-color: $color-yellow;
+}
+
+.bg-white{
+  background-color: #fff;
+}
+
+// #f9f9f9
+.bg-light{
+  background-color: $color-bg-light!important;
+}
+
+.bg-dark{
+  background-color: $color-dark;
+}
+
+.bg-transparent{
+  background-color: transparent;
+}
+
+.bg-mask{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.color-yellow{
+  color: $color-yellow;
+}
+
+// #3d3d3d
+.color-dark{
+  color: $color-dark;
+}
+
+// #999
+.color-gray{
+  color: $color-gray;
+}
+
+// #a1a1a1
+.color-gray-light{
+  color: $color-gray-light;
+}
+
+// #d5d5d5
+.color-gray-white{
+  color: $color-gray-white;
+}
+
+.color-white{
+  color: #fff;
+}
+
+.color-black{
+  color: #000;
+}
+
+.color-blue{
+  color: $color-blue;
+}
